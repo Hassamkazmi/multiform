@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { toast } from 'react-toastify';
-
+import '../Styles/HorsePage3.css'
 
 const OtherInfo = ({ formData, setFormData, page, setPage, x, setX }) => {
   const handleSubmit = () => {
@@ -19,42 +19,66 @@ const OtherInfo = ({ formData, setFormData, page, setPage, x, setX }) => {
       initial={{ x: x }}
       transition={{ duration: 1 }}
       animate={{ x: 0 }}
-      className="card"
+      className=" container"
     >
-      <div className="step-title">Other Info</div>
-      <input
-        type="text"
-        placeholder="Color"
-        value={formData.color}
-        required
-        onChange={(e) =>
-          setFormData({ ...formData, color: e.target.value })
-        }
-      />
-      <input
-        type="number"
-        placeholder="Earning"
-        required
-        value={formData.earning}
-        onChange={(e) =>
-          setFormData({ ...formData, earning: e.target.value })
-        }
-      />
-      <input
-        type="number"
-        placeholder="Price"
-        value={formData.price}
-        required
-        onChange={(e) => setFormData({ ...formData, price: e.target.value })}
-      />
-      <br />
-      <button
-        onClick={handleSubmit}
-      >
-        Submit
-      </button>
-      <br />
-      <button
+      
+      <div className="row container maincontainer">
+        <div className="col-sm-12 col-md-6 formMain">
+
+<input
+  type="text"
+  placeholder="color"
+  required
+  className="form-group"
+  value={formData.color}
+  onChange={(e) => setFormData({ ...formData, color: e.target.value })}
+/>
+<input
+  type="number"
+  className="form-group"
+  placeholder="earning"
+  required
+  value={formData.earning}
+  onChange={(e) => setFormData({ ...formData, earning: e.target.value })}
+/>
+<input
+  type="number"
+  className="form-group"
+  placeholder="price"
+  required
+  value={formData.price}
+  onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+/>
+</div>
+<div className="col-sm-12 col-md-6 DataAr">
+<input
+  type="text"
+  placeholder="Name"
+  required
+  className="form-group"
+  value={formData.fullName}
+  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+/>
+<input
+  type="number"
+  className="form-group"
+  placeholder="Age"
+  required
+  value={formData.age}
+  onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+/>
+<input
+  type="number"
+  className="form-group"
+  placeholder="Weight"
+  required
+  value={formData.weight}
+  onChange={(e) => setFormData({ ...formData, weight: e.target.value })}
+/>
+</div>
+</div>
+<div className="container btnDivide">
+<button
         onClick={() => {
           setPage(page - 1);
           setX(-1000);
@@ -62,6 +86,14 @@ const OtherInfo = ({ formData, setFormData, page, setPage, x, setX }) => {
       >
         Previous
       </button>
+      <button
+        onClick={handleSubmit}
+      >
+        Submit
+      </button>
+     
+      </div>
+    
     </motion.div>
   );
 };

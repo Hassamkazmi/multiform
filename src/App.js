@@ -15,13 +15,23 @@ function App() {
     fullname: "",
     age: "",
     weight: "",
+    fullnameAr:'',
+    ageAr: "",
+    weightAr: "",
     kind: "",
     breeder: "",
     pedigree: "",
+    kindAr: "",
+    breederAr: "",
+    pedigreeAr: "",
     color: "",
     earning: "",
     price: "",
+    colorAr: "",
+    earningAr: "",
+    priceAr: "",
   });
+  
 
   const componentList = [
     <SignUp
